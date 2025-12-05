@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Feyza Nur Cesimkaya | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #020617;
+      --bg-grad1: #020617;
+      --bg-grad2: #020617;
+      --card-bg1: #020617;
+      --card-bg2: #020617;
+      --border: #1f2937;
+      --accent: #38bdf8;
+      --accent-soft: #0ea5e9;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 40%, #000 100%);
+      color: var(--text-main);
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 16px 80px;
+    }
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+      margin-bottom: 32px;
+      align-items: center;
+    }
+    .avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 999px;
+      overflow: hidden;
+      border: 2px solid var(--accent);
+      flex-shrink: 0;
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.55);
+      background: #020617;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-align: center;
+      padding: 6px;
+    }
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .header-text {
+      flex: 1;
+      min-width: 230px;
+    }
+    h1 {
+      margin: 0 0 4px;
+      font-size: 2.2rem;
+    }
+    .role {
+      color: var(--accent-soft);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .location {
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .tagline {
+      color: #e5e7eb;
+      margin-top: 4px;
+      max-width: 520px;
+    }
+    .actions {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .btn-led {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 22px;
+      border-radius: 999px;
+      background: radial-gradient(circle at top left, #0ea5e9, #0369a1);
+      color: #020617;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      box-shadow:
+        0 0 6px rgba(56, 189, 248, 0.9),
+        0 0 18px rgba(56, 189, 248, 0.7),
+        0 0 34px rgba(56, 189, 248, 0.5);
+      border: 1px solid rgba(8, 47, 73, 0.8);
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      overflow: hidden;
+    }
+    .btn-led::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: linear-gradient(120deg,
+        rgba(248, 250, 252, 0.25),
+        transparent 40%,
+        transparent 60%,
+        rgba(248, 250, 252, 0.15));
+      mix-blend-mode: screen;
+      opacity: 0.7;
+    }
+    .btn-led span {
+      position: relative;
+      z-index: 1;
+    }
+    .btn-led:hover {
+      transform: translateY(-1px);
+      box-shadow:
+        0 0 10px rgba(56, 189, 248, 1),
+        0 0 26px rgba(56, 189, 248, 0.9),
+        0 0 40px rgba(56, 189, 248, 0.8);
+    }
+    .btn-ghost {
+      padding: 9px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.8);
+      color: var(--text-main);
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+    }
+    section { margin-top: 32px; }
+    h2 {
+      font-size: 1.35rem;
+      margin-bottom: 14px;
+      border-left: 4px solid var(--accent);
+      padding-left: 8px;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    .card {
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 18px;
+      background: radial-gradient(circle at top left, #0b1120, #020617);
+      box-shadow: 0 14px 36px rgba(15, 23, 42, 0.9);
+    }
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 6px;
+      font-size: 1.05rem;
+    }
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+      font-size: 0.8rem;
+    }
+    .pill {
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #020617;
+      color: #e5e7eb;
+    }
+    ul { padding-left: 18px; margin: 6px 0; }
+    footer {
+      margin-top: 40px;
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+    @media (max-width: 640px) {
+      .wrapper { padding: 24px 12px 56px; }
+      h1 { font-size: 1.9rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="avatar">
+        <img src="profile.jpg" alt="Feyza Nur Cesimkaya" onerror="this.style.display='none'; this.parentElement.textContent='Upload profile.jpg here';" />
+      </div>
+      <div class="header-text">
+        <h1>Feyza Nur Cesimkaya</h1>
+        <div class="role">Industrial Engineering Student · Marketing & Strategy Enthusiast</div>
+        <div class="location">Istanbul, Türkiye</div>
+        <p class="tagline">
+          Passionate about marketing, digital transformation, quality management and organisational strategy.
+          I enjoy leading teams, analysing processes and turning ideas into impactful, real-world projects.
+        </p>
+        <div class="actions">
+          <a class="btn-led" href="cv-feyza-nur-cesimkaya.pdf" download><span>Download CV</span></a>
+          <a class="btn-ghost" href="https://github.com/feyzanurcesimkaya" target="_blank">GitHub Profile →</a>
+        </div>
+      </div>
+    </header>
+
+    <section id="about">
+      <h2>About</h2>
+      <div class="card">
+        <p>
+          I am a people-oriented Industrial Engineering student with a strong interest in
+          <strong>marketing</strong>, <strong>digital transformation</strong>, <strong>quality management</strong> and
+          <strong>organisational strategy</strong>. I like working in dynamic environments where I can connect stakeholders,
+          coordinate operations and turn abstract ideas into structured, executable plans.
+        </p>
+        <p>
+          My experience spans student organisations, corporate internship environments and international events.
+          I am especially motivated by roles at the intersection of <strong>business, technology and customer experience</strong>.
+        </p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Core Skills & Interests</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Business & Marketing</h3>
+          <ul>
+            <li>Marketing & corporate relations</li>
+            <li>Brand representation & partnerships</li>
+            <li>Communication strategy & stakeholder management</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Operations & Quality</h3>
+          <ul>
+            <li>Project & event management</li>
+            <li>KPI tracking & reporting</li>
+            <li>Internal audits & documentation systems</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Digital & Analytical</h3>
+          <ul>
+            <li>EDMS & digital archiving</li>
+            <li>Process automation mindset</li>
+            <li>Data-informed decision making</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Soft Skills</h3>
+          <ul>
+            <li>Leadership & public speaking</li>
+            <li>Teamwork & adaptability</li>
+            <li>Cross-cultural communication</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Featured Projects</h2>
+
+      <div class="card">
+        <h3>Event Management Web Application (2025)</h3>
+        <p>
+          University club platform to streamline event planning and participant management.
+          Developed as part of an organisation leader role to support real club operations.
+        </p>
+        <ul>
+          <li>Reduced manual administrative workload by ~40%.</li>
+          <li>Automated event creation, registration and reminder logic.</li>
+          <li>Designed flows from the organiser and participant perspective.</li>
+        </ul>
+        <div class="pill-row">
+          <span class="pill">Organisation & Operations</span>
+          <span class="pill">Process Design</span>
+          <span class="pill">Student Clubs</span>
+        </div>
+        <p style="margin-top:10px;">
+          🔗 <a href="https://github.com/feyzanurcesimkaya/event-management-web-app" target="_blank">
+            View project on GitHub
+          </a>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>AI-Powered NCR Root Cause Analysis (2025)</h3>
+        <p>
+          Concept project exploring how AI can support Non-Conformance Report (NCR) analysis and
+          digital quality management in industrial settings.
+        </p>
+        <ul>
+          <li>Contributed to root cause classification logic and data understanding.</li>
+          <li>Linked real-life quality workflows with a decision-support concept.</li>
+          <li>Aimed at reducing manual analysis workload for quality teams.</li>
+        </ul>
+        <div class="pill-row">
+          <span class="pill">Quality Management</span>
+          <span class="pill">Root Cause Analysis</span>
+          <span class="pill">AI-Assisted Decisions</span>
+        </div>
+        <p style="margin-top:10px;">
+          🔗 <a href="https://github.com/feyzanurcesimkaya/ai-ncr-root-cause-analysis" target="_blank">
+            View project on GitHub
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <section id="leadership">
+      <h2>Leadership & Volunteering</h2>
+      <div class="card">
+        <ul>
+          <li><strong>100sClub – Senior Area Leader & Board Member (Marketing & Corporate Relations)</strong><br />
+            Represent the organisation in meetings with company executives, manage partnerships and support brand promotion.
+          </li>
+          <li><strong>MEF Industrial Engineering Club – Organisation Committee Member</strong><br />
+            Coordinate academic panels, social events and professional development activities.
+          </li>
+          <li><strong>IVY in MEF & Webrazzi HR Summit – Organisation Teams</strong><br />
+            Active in operations, communication and event logistics.
+          </li>
+          <li><strong>Istanbul Toplum Gönüllüleri Foundation (TOG) – Volunteer</strong><br />
+            Participate in youth-oriented social responsibility initiatives.
+          </li>
+          <li><strong>SLUSH Türkiye – Volunteer (2025)</strong><br />
+            Worked with international founders, investors and startups; gained cross-cultural communication experience.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <p>Open to internship opportunities in marketing, operations, quality and digital transformation.</p>
+        <p>
+          📧 <a href="mailto:feyzanurcesimkaya@gmail.com">feyzanurcesimkaya@gmail.com</a><br />
+          💼 <a href="https://linkedin.com/in/feyzanurcesimkaya" target="_blank">linkedin.com/in/feyzanurcesimkaya</a><br />
+          🐙 <a href="https://github.com/feyzanurcesimkaya" target="_blank">github.com/feyzanurcesimkaya</a>
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Feyza Nur Cesimkaya · Built with GitHub Pages
+    </footer>
+  </div>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
