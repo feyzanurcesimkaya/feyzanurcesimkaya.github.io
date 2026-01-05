@@ -4,18 +4,21 @@
   <meta charset="UTF-8" />
   <title>Feyza Nur Cesimkaya | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Feyza Nur Cesimkaya — Industrial Engineering Student. Portfolio: AI-driven marketing systems, operations, quality, and digital transformation." />
   <style>
     :root {
       --bg: #020617;
-      --card-bg1: #020617;
-      --card-bg2: #020617;
+      --card-bg: radial-gradient(circle at top left, #0b1120, #020617);
       --border: #1f2937;
       --accent: #38bdf8;
       --accent-soft: #0ea5e9;
       --text-main: #f9fafb;
       --text-muted: #9ca3af;
+      --shadow: 0 12px 30px rgba(15, 23, 42, 0.9);
+      --shadow-strong: 0 18px 42px rgba(15, 23, 42, 1);
     }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -24,23 +27,80 @@
     }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
+
     .wrapper {
-      max-width: 960px;
+      max-width: 1024px;
       margin: 0 auto;
-      padding: 32px 16px 80px;
+      padding: 18px 16px 80px;
     }
+
+    /* NAV */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(2, 6, 23, 0.72);
+      border-bottom: 1px solid rgba(31, 41, 55, 0.7);
+    }
+    .nav-inner {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      color: var(--text-main);
+      white-space: nowrap;
+    }
+    .brand-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 16px rgba(56, 189, 248, 0.85);
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .nav-links a {
+      font-size: 0.9rem;
+      color: #d1d5db;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+    }
+    .nav-links a:hover {
+      background: rgba(15, 23, 42, 0.65);
+      border-color: rgba(31, 41, 55, 0.7);
+      text-decoration: none;
+    }
+
+    /* HEADER */
     header {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
       border-bottom: 1px solid var(--border);
-      padding-bottom: 20px;
-      margin-bottom: 32px;
+      padding: 26px 0 20px;
+      margin-bottom: 28px;
       align-items: center;
     }
     .avatar {
-      width: 110px;
-      height: 110px;
+      width: 112px;
+      height: 112px;
       border-radius: 999px;
       overflow: hidden;
       border: 2px solid var(--accent);
@@ -50,7 +110,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       color: var(--text-muted);
       text-align: center;
       padding: 6px;
@@ -61,33 +121,18 @@
       object-fit: cover;
       display: block;
     }
-    .header-text {
-      flex: 1;
-      min-width: 230px;
-    }
-    h1 {
-      margin: 0 0 4px;
-      font-size: 2.2rem;
-    }
-    .role {
-      color: var(--accent-soft);
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-    .location {
-      color: var(--text-muted);
-      margin-bottom: 8px;
-    }
-    .tagline {
-      color: #e5e7eb;
-      margin-top: 4px;
-      max-width: 520px;
-    }
+    .header-text { flex: 1; min-width: 240px; }
+    h1 { margin: 0 0 4px; font-size: 2.25rem; }
+    .role { color: var(--accent-soft); font-weight: 700; margin-bottom: 6px; }
+    .location { color: var(--text-muted); margin-bottom: 10px; }
+    .tagline { color: #e5e7eb; margin-top: 6px; max-width: 650px; line-height: 1.45; }
+
     .actions {
       margin-top: 14px;
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+      align-items: center;
     }
     .btn-led {
       position: relative;
@@ -98,7 +143,7 @@
       border-radius: 999px;
       background: radial-gradient(circle at top left, #0ea5e9, #0369a1);
       color: #020617;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 0.02em;
       box-shadow:
         0 0 6px rgba(56, 189, 248, 0.9),
@@ -107,7 +152,7 @@
       border: 1px solid rgba(8, 47, 73, 0.8);
       text-decoration: none;
       text-transform: uppercase;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       overflow: hidden;
       transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
     }
@@ -124,12 +169,8 @@
       mix-blend-mode: screen;
       opacity: 0.7;
     }
-    .btn-led span {
-      position: relative;
-      z-index: 1;
-    }
-    .btn-led:hover,
-    .btn-led:active {
+    .btn-led span { position: relative; z-index: 1; }
+    .btn-led:hover, .btn-led:active {
       transform: translateY(-1px);
       box-shadow:
         0 0 10px rgba(56, 189, 248, 1),
@@ -137,62 +178,51 @@
         0 0 40px rgba(56, 189, 248, 0.8);
     }
     .btn-ghost {
-      padding: 9px 18px;
+      padding: 9px 16px;
       border-radius: 999px;
       border: 1px solid var(--border);
       background: rgba(15, 23, 42, 0.8);
       color: var(--text-main);
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       text-decoration: none;
       transition: background 0.15s ease-out, transform 0.15s ease-out;
     }
-    .btn-ghost:hover,
-    .btn-ghost:active {
-      background: #020617;
-      transform: translateY(-1px);
-    }
-    section { margin-top: 32px; }
+    .btn-ghost:hover, .btn-ghost:active { background: #020617; transform: translateY(-1px); }
+
+    /* SECTIONS / CARDS */
+    section { margin-top: 34px; }
     h2 {
       font-size: 1.35rem;
       margin-bottom: 14px;
       border-left: 4px solid var(--accent);
-      padding-left: 8px;
+      padding-left: 10px;
     }
+    .muted { color: var(--text-muted); }
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 14px;
     }
     .card {
       border-radius: 14px;
       border: 1px solid var(--border);
       padding: 18px;
-      background: radial-gradient(circle at top left, #0b1120, #020617);
-      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.9);
+      background: var(--card-bg);
+      box-shadow: var(--shadow);
       transition: transform 0.18s ease-out, box-shadow 0.18s ease-out, border-color 0.18s ease-out;
-      cursor: pointer;
     }
-    .card:hover,
-    .card:active {
+    .card.clickable { cursor: pointer; }
+    .card:hover, .card:active {
       transform: translateY(-4px);
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 1);
+      box-shadow: var(--shadow-strong);
       border-color: var(--accent);
     }
-    .card h3 {
-      margin-top: 0;
-      margin-bottom: 6px;
-      font-size: 1.05rem;
-    }
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 8px;
-      font-size: 0.8rem;
-    }
+    .card h3 { margin: 0 0 6px; font-size: 1.06rem; }
+    .card p { margin: 8px 0; line-height: 1.5; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; font-size: 0.8rem; }
     .pill {
       padding: 3px 8px;
       border-radius: 999px;
@@ -200,38 +230,140 @@
       background: #020617;
       color: #e5e7eb;
     }
-    ul { padding-left: 18px; margin: 6px 0; }
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+      align-items: center;
+    }
+    .mini-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(31, 41, 55, 0.8);
+      background: rgba(2, 6, 23, 0.6);
+      color: #d1d5db;
+      font-size: 0.88rem;
+    }
+    .mini-link:hover { border-color: var(--accent); text-decoration: none; }
+
+    /* MODAL */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      z-index: 100;
+    }
+    .modal {
+      width: min(860px, 100%);
+      border-radius: 16px;
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      background: radial-gradient(circle at top left, #0b1120, #020617);
+      box-shadow: 0 22px 60px rgba(0,0,0,0.7);
+      overflow: hidden;
+    }
+    .modal-header {
+      padding: 16px 18px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      border-bottom: 1px solid rgba(31, 41, 55, 0.8);
+    }
+    .modal-header h3 { margin: 0; font-size: 1.1rem; }
+    .modal-close {
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      background: rgba(2, 6, 23, 0.6);
+      color: #e5e7eb;
+      border-radius: 10px;
+      padding: 7px 10px;
+      cursor: pointer;
+    }
+    .modal-body {
+      padding: 16px 18px 18px;
+      line-height: 1.55;
+    }
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+      margin: 12px 0 6px;
+    }
+    .kpi {
+      border: 1px solid rgba(31, 41, 55, 0.8);
+      border-radius: 12px;
+      padding: 12px;
+      background: rgba(2, 6, 23, 0.55);
+    }
+    .kpi .label { color: var(--text-muted); font-size: 0.85rem; }
+    .kpi .value { font-size: 1.05rem; font-weight: 800; margin-top: 4px; }
+
+    pre {
+      background: rgba(2, 6, 23, 0.8);
+      border: 1px solid rgba(31, 41, 55, 0.8);
+      border-radius: 12px;
+      padding: 12px;
+      overflow: auto;
+      color: #e5e7eb;
+      font-size: 0.9rem;
+    }
+
     footer {
-      margin-top: 40px;
+      margin-top: 46px;
       border-top: 1px solid var(--border);
       padding-top: 16px;
       font-size: 0.9rem;
       color: var(--text-muted);
       text-align: center;
     }
+
     @media (max-width: 640px) {
-      .wrapper { padding: 24px 12px 56px; }
       h1 { font-size: 1.9rem; }
+      .nav-links a { font-size: 0.86rem; padding: 7px 8px; }
     }
   </style>
 </head>
 <body>
+
+  <!-- NAV -->
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand"><span class="brand-dot"></span> Feyza Nur</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+
   <div class="wrapper">
     <header>
       <div class="avatar">
-        <img src="profile.jpg" alt="Feyza Nur Cesimkaya" onerror="this.style.display='none'; this.parentElement.textContent='Upload profile.jpg here';" />
+        <img src="profile.jpg" alt="Feyza Nur Cesimkaya"
+             onerror="this.style.display='none'; this.parentElement.textContent='Upload profile.jpg here';" />
       </div>
       <div class="header-text">
         <h1>Feyza Nur Cesimkaya</h1>
-        <div class="role">Industrial Engineering Student</div>
+        <div class="role">Industrial Engineering Student · Marketing & AI Systems</div>
         <div class="location">Istanbul, Türkiye</div>
         <p class="tagline">
-          Passionate about marketing, digital transformation, quality management and organisational strategy.
-          I enjoy leading teams, analysing processes and turning ideas into impactful, real-world projects.
+          I build human-centered, AI-driven prototypes that connect <strong>behavior → decisions → communication</strong>.
+          Interested in marketing systems, digital transformation, quality, and operational strategy.
         </p>
         <div class="actions">
           <a class="btn-led" href="cv-feyza-nur-cesimkaya.pdf" download><span>Download CV</span></a>
-          <a class="btn-ghost" href="https://github.com/feyzanurcesimkaya" target="_blank">GitHub Profile →</a>
+          <a class="btn-ghost" href="https://linkedin.com/in/feyzanurcesimkaya" target="_blank" rel="noreferrer">LinkedIn →</a>
+          <a class="btn-ghost" href="https://github.com/feyzanurcesimkaya" target="_blank" rel="noreferrer">GitHub →</a>
         </div>
       </div>
     </header>
@@ -240,14 +372,13 @@
       <h2>About</h2>
       <div class="card">
         <p>
-          I am a people-oriented Industrial Engineering student with a strong interest in
+          I’m a people-oriented Industrial Engineering student with a strong interest in
           <strong>marketing</strong>, <strong>digital transformation</strong>, <strong>quality management</strong> and
-          <strong>organisational strategy</strong>. I like working in dynamic environments where I can connect stakeholders,
-          coordinate operations and turn abstract ideas into structured, executable plans.
+          <strong>organizational strategy</strong>.
         </p>
         <p>
-          My experience spans student organisations, corporate internship environments and international events.
-          I am especially motivated by roles at the intersection of <strong>business, technology and customer experience</strong>.
+          I enjoy connecting stakeholders, leading teams, and turning abstract ideas into structured, executable systems.
+          My projects often sit at the intersection of <strong>business, technology, and customer experience</strong>.
         </p>
       </div>
     </section>
@@ -274,9 +405,9 @@
         <div class="card">
           <h3>Digital & Analytical</h3>
           <ul>
-            <li>EDMS & digital archiving</li>
-            <li>Process automation mindset</li>
+            <li>Process optimization mindset</li>
             <li>Data-informed decision making</li>
+            <li>Prototyping & modular systems</li>
           </ul>
         </div>
         <div class="card">
@@ -288,56 +419,72 @@
           </ul>
         </div>
       </div>
+      <p class="muted" style="margin-top:12px;">
+        Tools: Python, Streamlit, Git/GitHub, Excel, Google Workspace, CRM · Interests: AI-driven marketing systems, coffee culture, entrepreneurship.
+      </p>
     </section>
 
     <section id="projects">
       <h2>Featured Projects</h2>
 
-      <div class="card">
-        <h3>Event Management Web Application (2025)</h3>
-        <p>
-          University club platform to streamline event planning and participant management.
-          Developed as part of an organisation leader role to support real club operations.
-        </p>
-        <ul>
-          <li>Reduced manual administrative workload by ~40%.</li>
-          <li>Automated event creation, registration and reminder logic.</li>
-          <li>Designed flows from the organiser and participant perspective.</li>
-        </ul>
-        <div class="pill-row">
-          <span class="pill">Organisation & Operations</span>
-          <span class="pill">Process Design</span>
-          <span class="pill">Student Clubs</span>
-        </div>
-        <p style="margin-top:10px;">
-          🔗 <a href="https://github.com/feyzanurcesimkaya/event-management-web-app" target="_blank">
-            View project on GitHub
-          </a>
-        </p>
-      </div>
+      <div class="card-grid">
 
-      <div class="card">
-        <h3>AI-Powered NCR Root Cause Analysis (2025)</h3>
-        <p>
-          Concept project exploring how AI can support Non-Conformance Report (NCR) analysis and
-          digital quality management in industrial settings.
-        </p>
-        <ul>
-          <li>Contributed to root cause classification logic and data understanding.</li>
-          <li>Linked real-life quality workflows with a decision-support concept.</li>
-          <li>Aimed at reducing manual analysis workload for quality teams.</li>
-        </ul>
-        <div class="pill-row">
-          <span class="pill">Quality Management</span>
-          <span class="pill">Root Cause Analysis</span>
-          <span class="pill">AI-Assisted Decisions</span>
+        <!-- NEW: LifeMode AI -->
+        <div class="card clickable" data-modal="lifemode">
+          <h3>Spotify | LifeMode AI (2026)</h3>
+          <p>
+            AI-driven, human-centered marketing system prototype.
+            Interprets user behavior to infer a “LifeMode”, then generates multilingual (EN/TR) marketing outputs.
+          </p>
+          <div class="pill-row">
+            <span class="pill">AI Decision Layer</span>
+            <span class="pill">Marketing Automation</span>
+            <span class="pill">Streamlit Dashboard</span>
+            <span class="pill">EN/TR</span>
+          </div>
+          <div class="card-actions">
+            <a class="mini-link" href="https://github.com/feyzanurcesimkaya/spotify-lifemode-ai" target="_blank" rel="noreferrer">GitHub Repo →</a>
+            <span class="mini-link" style="cursor:pointer;" onclick="openModal('lifemode'); return false;">Details →</span>
+          </div>
         </div>
-        <p style="margin-top:10px;">
-          🔗 <a href="https://github.com/feyzanurcesimkaya/ai-ncr-root-cause-analysis" target="_blank">
-            View project on GitHub
-          </a>
-        </p>
+
+        <div class="card clickable" data-modal="eventapp">
+          <h3>Event Management Web Application (2025)</h3>
+          <p>
+            University club platform to streamline event planning and participant management.
+            Designed from both organizer and participant perspectives.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Operations</span>
+            <span class="pill">Process Design</span>
+            <span class="pill">Student Clubs</span>
+          </div>
+          <div class="card-actions">
+            <a class="mini-link" href="https://github.com/feyzanurcesimkaya/event-management-web-app" target="_blank" rel="noreferrer">GitHub →</a>
+            <span class="mini-link" style="cursor:pointer;" onclick="openModal('eventapp'); return false;">Details →</span>
+          </div>
+        </div>
+
+        <div class="card clickable" data-modal="ncr">
+          <h3>AI-Powered NCR Root Cause Analysis (2025)</h3>
+          <p>
+            Concept project exploring AI-assisted decision support for Non-Conformance Report (NCR) analysis in quality workflows.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Quality Management</span>
+            <span class="pill">Root Cause Analysis</span>
+            <span class="pill">AI-Assisted Decisions</span>
+          </div>
+          <div class="card-actions">
+            <a class="mini-link" href="https://github.com/feyzanurcesimkaya/ai-ncr-root-cause-analysis" target="_blank" rel="noreferrer">GitHub →</a>
+            <span class="mini-link" style="cursor:pointer;" onclick="openModal('ncr'); return false;">Details →</span>
+          </div>
+        </div>
+
       </div>
+      <p class="muted" style="margin-top:12px;">
+        Tip: Click “Details” to see the problem, approach, and outcomes — optimized for recruiters.
+      </p>
     </section>
 
     <section id="leadership">
@@ -345,19 +492,16 @@
       <div class="card">
         <ul>
           <li><strong>100sClub – Senior Area Leader & Board Member (Marketing & Corporate Relations)</strong><br />
-            Represent the organisation in meetings with company executives, manage partnerships and support brand promotion.
+            Design and execute student engagement campaigns; manage partnerships and stakeholder communication.
           </li>
-          <li><strong>MEF Industrial Engineering Club – Organisation Committee Member</strong><br />
-            Coordinate academic panels, social events and professional development activities.
+          <li><strong>MEF University – Student Affairs Assistant</strong><br />
+            Support student-facing operations; coordinate event logistics and documentation workflows.
           </li>
-          <li><strong>IVY in MEF & Webrazzi HR Summit – Organisation Teams</strong><br />
-            Active in operations, communication and event logistics.
-          </li>
-          <li><strong>Istanbul Toplum Gönüllüleri Foundation (TOG) – Volunteer</strong><br />
-            Participate in youth-oriented social responsibility initiatives.
+          <li><strong>IVY in MEF – Administrative Board Member & Speaker Team Lead</strong><br />
+            Lead outreach and scheduling with speakers; support strategic event decisions.
           </li>
           <li><strong>SLUSH Türkiye – Volunteer (2025)</strong><br />
-            Worked with international founders, investors and startups; gained cross-cultural communication experience.
+            Collaborated with international founders, investors, and startups in a fast-paced environment.
           </li>
         </ul>
       </div>
@@ -369,8 +513,8 @@
         <p>Open to internship opportunities in marketing, operations, quality and digital transformation.</p>
         <p>
           📧 <a href="mailto:feyzanurcesimkaya@gmail.com">feyzanurcesimkaya@gmail.com</a><br />
-          💼 <a href="https://linkedin.com/in/feyzanurcesimkaya" target="_blank">linkedin.com/in/feyzanurcesimkaya</a><br />
-          🐙 <a href="https://github.com/feyzanurcesimkaya" target="_blank">github.com/feyzanurcesimkaya</a>
+          💼 <a href="https://linkedin.com/in/feyzanurcesimkaya" target="_blank" rel="noreferrer">linkedin.com/in/feyzanurcesimkaya</a><br />
+          🐙 <a href="https://github.com/feyzanurcesimkaya" target="_blank" rel="noreferrer">github.com/feyzanurcesimkaya</a>
         </p>
       </div>
     </section>
@@ -379,8 +523,121 @@
       © <span id="year"></span> Feyza Nur Cesimkaya · Built with GitHub Pages
     </footer>
   </div>
+
+  <!-- MODALS -->
+  <div class="modal-backdrop" id="modal-backdrop" onclick="closeModal()">
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <div>
+          <h3 id="modal-title">Project</h3>
+          <div class="muted" id="modal-subtitle" style="margin-top:4px;"></div>
+        </div>
+        <button class="modal-close" onclick="closeModal()">Close</button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    const projects = {
+      lifemode: {
+        title: "Spotify | LifeMode AI",
+        subtitle: "AI-driven, human-centered marketing system prototype (Python + Streamlit) · EN/TR",
+        body: `
+          <p><strong>Idea:</strong> Move AI from “writing content” to <strong>making marketing decisions</strong>. The system infers a user's <em>LifeMode</em> from behavioral signals, then adapts tone and messaging across channels.</p>
+
+          <div class="kpi-grid">
+            <div class="kpi"><div class="label">Core Pipeline</div><div class="value">Behavior → LifeMode → Tone → Content</div></div>
+            <div class="kpi"><div class="label">Outputs</div><div class="value">Push · Email Subject · Social</div></div>
+            <div class="kpi"><div class="label">Localization</div><div class="value">English / Turkish</div></div>
+          </div>
+
+          <p><strong>What I built:</strong></p>
+          <ul>
+            <li>Rule-based AI classifier with confidence scores (transparent decisions)</li>
+            <li>Multilingual content generator (EN/TR) per channel</li>
+            <li>Interactive Streamlit dashboard to test the system in real-time</li>
+          </ul>
+
+          <p><strong>Run locally:</strong></p>
+          <pre>pip install -r requirements.txt
+python app.py
+streamlit run dashboard/dashboard_app.py</pre>
+
+          <p>
+            🔗 <a href="https://github.com/feyzanurcesimkaya/spotify-lifemode-ai" target="_blank" rel="noreferrer">
+              View on GitHub
+            </a>
+          </p>
+        `
+      },
+      eventapp: {
+        title: "Event Management Web Application",
+        subtitle: "University club operations platform · Full-stack project (2025)",
+        body: `
+          <p><strong>Problem:</strong> Manual event operations create administrative overhead for clubs and reduce participation experience.</p>
+          <p><strong>Approach:</strong> Built an event platform to streamline scheduling, registration, and reminders.</p>
+          <ul>
+            <li>Automated event creation, participant registration, and reminder logic</li>
+            <li>Designed organizer and participant flows</li>
+            <li>Focused on reducing operational workload and improving communication</li>
+          </ul>
+          <p>
+            🔗 <a href="https://github.com/feyzanurcesimkaya/event-management-web-app" target="_blank" rel="noreferrer">View on GitHub</a>
+          </p>
+        `
+      },
+      ncr: {
+        title: "AI-Powered NCR Root Cause Analysis",
+        subtitle: "Quality workflows + decision-support concept (2025)",
+        body: `
+          <p><strong>Goal:</strong> Explore how AI can support Non-Conformance Report (NCR) analysis and reduce manual workload in quality teams.</p>
+          <ul>
+            <li>Connected real industrial workflows with AI-assisted decision support</li>
+            <li>Focused on root cause classification logic and data understanding</li>
+            <li>Designed as a concept to support faster, more consistent quality analysis</li>
+          </ul>
+          <p>
+            🔗 <a href="https://github.com/feyzanurcesimkaya/ai-ncr-root-cause-analysis" target="_blank" rel="noreferrer">View on GitHub</a>
+          </p>
+        `
+      }
+    };
+
+    const backdrop = document.getElementById("modal-backdrop");
+    const mTitle = document.getElementById("modal-title");
+    const mSubtitle = document.getElementById("modal-subtitle");
+    const mBody = document.getElementById("modal-body");
+
+    function openModal(key) {
+      const p = projects[key];
+      if (!p) return;
+      mTitle.textContent = p.title;
+      mSubtitle.textContent = p.subtitle || "";
+      mBody.innerHTML = p.body || "";
+      backdrop.style.display = "flex";
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+      backdrop.style.display = "none";
+      document.body.style.overflow = "";
+    }
+
+    // Click card to open details if it has data-modal
+    document.querySelectorAll(".card.clickable").forEach(card => {
+      card.addEventListener("click", () => {
+        const key = card.getAttribute("data-modal");
+        if (key) openModal(key);
+      });
+    });
+
+    // Esc to close
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && backdrop.style.display === "flex") closeModal();
+    });
   </script>
 </body>
 </html>
