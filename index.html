@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <title>Feyza Nur Cesimkaya | Portfolio</title>
 
@@ -10,25 +11,22 @@
 <meta name="description"
 content="Feyza Nur Cesimkaya — Industrial Engineering student building AI-driven digital systems and product prototypes.">
 
-<meta name="keywords"
-content="Industrial Engineering, Product Thinking, AI Systems, Digital Transformation, Portfolio, Feyza Nur Cesimkaya">
-
 <style>
 
 :root{
 --bg:#020617;
---card-bg:radial-gradient(circle at top left,#0b1120,#020617);
+--card:#0b1120;
 --border:#1f2937;
 --accent:#38bdf8;
---text-main:#f9fafb;
---text-muted:#9ca3af;
+--text:#f9fafb;
+--muted:#9ca3af;
 }
 
 body{
 margin:0;
-font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+font-family:system-ui;
 background:radial-gradient(circle at top,#111827,#020617);
-color:var(--text-main);
+color:var(--text);
 }
 
 .wrapper{
@@ -38,41 +36,70 @@ padding:20px;
 }
 
 .nav{
+position:sticky;
+top:0;
 background:#020617;
 border-bottom:1px solid var(--border);
 padding:12px;
-position:sticky;
-top:0;
-z-index:50;
 }
 
 .nav a{
 margin-right:14px;
 color:#d1d5db;
 text-decoration:none;
-font-size:0.9rem;
 }
 
 .nav a:hover{
 color:white;
 }
 
-h1{
-margin:0;
-font-size:2.3rem;
+header{
+display:flex;
+gap:20px;
+align-items:center;
+flex-wrap:wrap;
+border-bottom:1px solid var(--border);
+padding-bottom:20px;
 }
 
-h2{
-border-left:4px solid var(--accent);
-padding-left:10px;
+.avatar{
+width:110px;
+height:110px;
+border-radius:50%;
+overflow:hidden;
+border:2px solid var(--accent);
+box-shadow:0 0 18px rgba(56,189,248,.6);
+}
+
+.avatar img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+h1{
+margin:0;
+font-size:2.2rem;
+}
+
+.role{
+color:#0ea5e9;
+font-weight:700;
 }
 
 .card{
+background:var(--card);
 border:1px solid var(--border);
-border-radius:12px;
+border-radius:14px;
 padding:18px;
-background:var(--card-bg);
 margin-top:14px;
+transition:.2s;
+}
+
+.card:hover{
+transform:translateY(-4px);
+border-color:var(--accent);
+box-shadow:0 15px 40px rgba(0,0,0,.6);
 }
 
 .card-grid{
@@ -81,19 +108,39 @@ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:14px;
 }
 
-.btn{
-display:inline-block;
-padding:10px 18px;
-border-radius:999px;
-background:#0ea5e9;
-color:#020617;
-font-weight:bold;
-text-decoration:none;
-margin-top:10px;
+h2{
+border-left:4px solid var(--accent);
+padding-left:10px;
+margin-top:35px;
 }
 
-.btn:hover{
-opacity:.9;
+.btn-led{
+display:inline-block;
+margin-top:12px;
+padding:10px 22px;
+border-radius:999px;
+background:radial-gradient(circle at top left,#0ea5e9,#0369a1);
+color:#020617;
+font-weight:800;
+text-decoration:none;
+box-shadow:
+0 0 6px rgba(56,189,248,.9),
+0 0 18px rgba(56,189,248,.7),
+0 0 34px rgba(56,189,248,.5);
+}
+
+.btn-led:hover{
+box-shadow:
+0 0 10px rgba(56,189,248,1),
+0 0 26px rgba(56,189,248,.9),
+0 0 40px rgba(56,189,248,.8);
+}
+
+.pill{
+border:1px solid var(--border);
+border-radius:999px;
+padding:4px 8px;
+font-size:.8rem;
 }
 
 .pill-row{
@@ -103,36 +150,26 @@ gap:6px;
 margin-top:10px;
 }
 
-.pill{
-border:1px solid var(--border);
-border-radius:999px;
-padding:4px 8px;
-font-size:0.8rem;
-}
-
 .muted{
-color:var(--text-muted);
+color:var(--muted);
 }
 
 footer{
 margin-top:40px;
 border-top:1px solid var(--border);
-padding-top:14px;
-color:var(--text-muted);
+padding-top:12px;
+color:var(--muted);
 text-align:center;
 }
 
 </style>
 </head>
 
-
 <body>
-
 
 <div class="nav">
 
 <a href="#about">About</a>
-<a href="#focus">Focus</a>
 <a href="#skills">Skills</a>
 <a href="#experience">Experience</a>
 <a href="#projects">Projects</a>
@@ -141,27 +178,40 @@ text-align:center;
 
 </div>
 
-
 <div class="wrapper">
-
 
 <header>
 
+<div class="avatar">
+
+<img src="profile.jpg">
+
+</div>
+
+<div>
+
 <h1>Feyza Nur Cesimkaya</h1>
 
-<div class="muted">
+<div class="role">
 Industrial Engineering Student · Product Thinking · AI & Digital Systems
 </div>
 
 <p>
 I build human-centered digital systems that connect behavior → insights → decisions.
-Interested in product development, AI-driven tools, digital transformation and operational strategy.
+Interested in product development, AI-driven tools and digital transformation.
 </p>
 
-<a class="btn" href="cv-feyza-nur-cesimkaya.pdf" target="_blank">Download CV</a>
+<a class="btn-led"
+href="cv-feyza-nur-cesimkaya.pdf"
+target="_blank">
+
+Download CV
+
+</a>
+
+</div>
 
 </header>
-
 
 <section id="about">
 
@@ -170,35 +220,16 @@ Interested in product development, AI-driven tools, digital transformation and o
 <div class="card">
 
 <p>
-I am an Industrial Engineering student at MEF University with a strong interest in the intersection of technology, data, and business strategy.
+Industrial Engineering student at MEF University interested in the intersection of technology, data and business strategy.
 </p>
 
 <p>
-I enjoy working on problems where analytical thinking meets real-world impact, building systems and digital solutions that turn complex challenges into structured and scalable outcomes.
+I enjoy building systems and digital tools that turn complex problems into scalable solutions.
 </p>
 
 </div>
 
 </section>
-
-
-<section id="focus">
-
-<h2>Focus Areas</h2>
-
-<div class="card">
-
-<ul>
-<li>Product Thinking & Digital Innovation</li>
-<li>AI-driven decision support systems</li>
-<li>Process optimization and operational strategy</li>
-<li>Human-centered technology solutions</li>
-</ul>
-
-</div>
-
-</section>
-
 
 <section id="skills">
 
@@ -207,44 +238,48 @@ I enjoy working on problems where analytical thinking meets real-world impact, b
 <div class="card-grid">
 
 <div class="card">
-<h3>Business & Strategy</h3>
+
+<h3>Business</h3>
+
 <ul>
 <li>Product Thinking</li>
 <li>Stakeholder Management</li>
 <li>Business Analysis</li>
-<li>Marketing Strategy</li>
+
 </ul>
+
 </div>
 
 <div class="card">
-<h3>Operations & Quality</h3>
+
+<h3>Operations</h3>
+
 <ul>
 <li>Process Optimization</li>
 <li>KPI Tracking</li>
 <li>Root Cause Analysis</li>
-<li>Operational Strategy</li>
+
 </ul>
+
 </div>
 
 <div class="card">
-<h3>Technical & Digital</h3>
+
+<h3>Technical</h3>
+
 <ul>
 <li>Python</li>
 <li>API Integration</li>
 <li>SQL</li>
 <li>Data Analysis</li>
+
 </ul>
-</div>
 
 </div>
 
-<p class="muted">
-Tools: Python, Streamlit, Git/GitHub, SQL, Excel, Google Workspace, VS Code
-</p>
+</div>
 
 </section>
-
-
 
 <section id="experience">
 
@@ -252,51 +287,37 @@ Tools: Python, Streamlit, Git/GitHub, SQL, Excel, Google Workspace, VS Code
 
 <div class="card">
 
-<strong>Story Harvesting & Event Experience Intern — TurkishWIN</strong>
+<strong>TurkishWIN — Story Harvesting Intern</strong>
 
 <p class="muted">2026 – Present</p>
 
 <ul>
-<li>Transform community event experiences into digital storytelling outputs</li>
-<li>Build structured content workflows using Notion and Asana</li>
-<li>Analyze engagement metrics to improve communication strategies</li>
+
+<li>Transform community experiences into digital storytelling outputs</li>
+
+<li>Analyze engagement metrics to optimize communication</li>
+
 </ul>
 
 </div>
 
-
 <div class="card">
 
-<strong>Quality Management Intern — ENKA Construction</strong>
+<strong>ENKA Construction — Quality Intern</strong>
 
 <p class="muted">2025</p>
 
 <ul>
-<li>Conducted root cause analysis to identify recurring operational issues</li>
-<li>Built KPI dashboards and data reporting structures</li>
-<li>Developed prototype monitoring tools for process tracking</li>
-</ul>
 
-</div>
+<li>Root cause analysis of operational issues</li>
 
+<li>Developed KPI monitoring dashboards</li>
 
-<div class="card">
-
-<strong>Senior Area Leader — 100sClub</strong>
-
-<p class="muted">Marketing & Corporate Relations</p>
-
-<ul>
-<li>Led engagement campaigns reaching 2000+ students</li>
-<li>Managed partnerships with corporate stakeholders</li>
-<li>Organized large-scale student summits and events</li>
 </ul>
 
 </div>
 
 </section>
-
-
 
 <section id="projects">
 
@@ -309,47 +330,37 @@ Tools: Python, Streamlit, Git/GitHub, SQL, Excel, Google Workspace, VS Code
 <h3>Spotify LifeMode AI</h3>
 
 <p>
-AI-driven marketing system that interprets user behavior to generate adaptive messaging.
+AI marketing system interpreting user behavior to generate personalized messaging.
 </p>
 
 <div class="pill-row">
+
 <span class="pill">AI</span>
-<span class="pill">Marketing Systems</span>
+
+<span class="pill">Marketing</span>
+
 <span class="pill">Streamlit</span>
-</div>
 
 </div>
 
+</div>
 
 <div class="card">
 
 <h3>Event Management Platform</h3>
 
 <p>
-Full-stack platform designed to automate student club event operations and communication.
+Full-stack platform automating university event operations.
 </p>
 
 <div class="pill-row">
+
 <span class="pill">React</span>
-<span class="pill">Node.js</span>
+
+<span class="pill">Node</span>
+
 <span class="pill">Operations</span>
-</div>
 
-</div>
-
-
-<div class="card">
-
-<h3>AI NCR Root Cause Analysis</h3>
-
-<p>
-AI-assisted decision support concept for quality management workflows.
-</p>
-
-<div class="pill-row">
-<span class="pill">Quality</span>
-<span class="pill">Root Cause Analysis</span>
-<span class="pill">AI</span>
 </div>
 
 </div>
@@ -357,8 +368,6 @@ AI-assisted decision support concept for quality management workflows.
 </div>
 
 </section>
-
-
 
 <section id="achievements">
 
@@ -368,58 +377,27 @@ AI-assisted decision support concept for quality management workflows.
 
 <div class="card">
 
-<h3>🏆 Slush Türkiye × Midas Case Challenge</h3>
+<h3>Slush Türkiye × Midas Case Winner</h3>
 
 <p>
-Led a team to design a user-centered fintech growth concept and ranked
-<strong>1st among participating teams</strong>.
+Developed a fintech product growth concept ranked 1st among teams.
 </p>
 
-<div class="pill-row">
-<span class="pill">Product Thinking</span>
-<span class="pill">Fintech</span>
-<span class="pill">Strategy</span>
 </div>
-
-</div>
-
 
 <div class="card">
 
-<h3>🌍 TurkishWIN Internship</h3>
+<h3>TurkishWIN Internship</h3>
 
 <p>
-Contributed to digital storytelling and event experience design within a global community network.
+Worked on digital storytelling and event experience strategy.
 </p>
-
-<div class="pill-row">
-<span class="pill">Community</span>
-<span class="pill">Digital Strategy</span>
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h3>🏗 ENKA Construction Internship</h3>
-
-<p>
-Worked on quality management processes and data-driven monitoring tools for operational improvements.
-</p>
-
-<div class="pill-row">
-<span class="pill">Quality</span>
-<span class="pill">Process Optimization</span>
-</div>
 
 </div>
 
 </div>
 
 </section>
-
-
 
 <section id="contact">
 
@@ -428,16 +406,12 @@ Worked on quality management processes and data-driven monitoring tools for oper
 <div class="card">
 
 <p>
-Open to internship opportunities in product, technology, digital transformation and data-driven innovation.
-</p>
-
-<p>
 
 📧 feyzanurcesimkaya@gmail.com<br>
 
-💼 <a href="https://linkedin.com/in/feyzanurcesimkaya" target="_blank">linkedin.com/in/feyzanurcesimkaya</a><br>
+💼 <a href="https://linkedin.com/in/feyzanurcesimkaya" target="_blank">LinkedIn</a><br>
 
-🐙 <a href="https://github.com/feyzanurcesimkaya" target="_blank">github.com/feyzanurcesimkaya</a>
+🐙 <a href="https://github.com/feyzanurcesimkaya" target="_blank">GitHub</a>
 
 </p>
 
@@ -445,16 +419,14 @@ Open to internship opportunities in product, technology, digital transformation 
 
 </section>
 
-
-
 <footer>
 
-© 2026 Feyza Nur Cesimkaya · Built with GitHub Pages
+© 2026 Feyza Nur Cesimkaya
 
 </footer>
-
 
 </div>
 
 </body>
+
 </html>
