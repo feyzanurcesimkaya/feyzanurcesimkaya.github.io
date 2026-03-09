@@ -9,66 +9,93 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <meta name="description"
-content="Feyza Nur Cesimkaya — Industrial Engineering student building AI-driven digital systems and product prototypes.">
+content="Feyza Nur Cesimkaya — Industrial Engineering Student building AI-driven marketing systems and digital products.">
 
 <style>
 
 :root{
 --bg:#020617;
---card:#0b1120;
+--card-bg:#020617;
 --border:#1f2937;
 --accent:#38bdf8;
---text:#f9fafb;
---muted:#9ca3af;
+--accent-soft:#0ea5e9;
+--text-main:#f9fafb;
+--text-muted:#9ca3af;
 }
+
+*{box-sizing:border-box}
 
 body{
 margin:0;
-font-family:system-ui;
-background:radial-gradient(circle at top,#111827,#020617);
-color:var(--text);
+font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+background:radial-gradient(circle at top,#111827 0,#020617 40%,#000 100%);
+color:var(--text-main);
 }
 
 .wrapper{
-max-width:1000px;
+max-width:1024px;
 margin:auto;
 padding:20px;
 }
 
+a{color:var(--accent);text-decoration:none}
+
+a:hover{text-decoration:underline}
+
+/* NAV */
+
 .nav{
 position:sticky;
 top:0;
-background:#020617;
+background:rgba(2,6,23,.9);
 border-bottom:1px solid var(--border);
-padding:12px;
 }
 
-.nav a{
-margin-right:14px;
-color:#d1d5db;
-text-decoration:none;
-}
-
-.nav a:hover{
-color:white;
-}
-
-header{
+.nav-inner{
+max-width:1024px;
+margin:auto;
 display:flex;
-gap:20px;
-align-items:center;
-flex-wrap:wrap;
+justify-content:space-between;
+padding:12px 16px;
+}
+
+.brand{
+display:flex;
+gap:8px;
+font-weight:800;
+}
+
+.brand-dot{
+width:10px;
+height:10px;
+border-radius:50%;
+background:var(--accent);
+box-shadow:0 0 12px rgba(56,189,248,.9);
+}
+
+.nav-links{
+display:flex;
+gap:14px;
+}
+
+/* HERO */
+
+.hero{
+padding:40px 0;
 border-bottom:1px solid var(--border);
-padding-bottom:20px;
+display:flex;
+gap:24px;
+flex-wrap:wrap;
+align-items:center;
 }
 
 .avatar{
 width:110px;
 height:110px;
-border-radius:50%;
+border-radius:100px;
 overflow:hidden;
 border:2px solid var(--accent);
-box-shadow:0 0 18px rgba(56,189,248,.6);
+box-shadow:0 0 16px rgba(56,189,248,.7);
 }
 
 .avatar img{
@@ -77,52 +104,50 @@ height:100%;
 object-fit:cover;
 }
 
-h1{
+.hero-text{flex:1}
+
+.hero-text h1{
 margin:0;
 font-size:2.2rem;
 }
 
-.role{
-color:#0ea5e9;
-font-weight:700;
+.hero-sub{
+margin-top:10px;
+color:var(--text-muted);
+font-size:1.05rem;
 }
 
-.card{
-background:var(--card);
+.hero-tags{
+margin-top:12px;
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+}
+
+.hero-tags span{
+padding:6px 12px;
+border-radius:20px;
 border:1px solid var(--border);
-border-radius:14px;
-padding:18px;
+font-size:.8rem;
+}
+
+/* BUTTONS */
+
+.actions{
 margin-top:14px;
-transition:.2s;
-}
-
-.card:hover{
-transform:translateY(-4px);
-border-color:var(--accent);
-box-shadow:0 15px 40px rgba(0,0,0,.6);
-}
-
-.card-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:14px;
-}
-
-h2{
-border-left:4px solid var(--accent);
-padding-left:10px;
-margin-top:35px;
+display:flex;
+gap:10px;
+flex-wrap:wrap;
 }
 
 .btn-led{
-display:inline-block;
-margin-top:12px;
 padding:10px 22px;
 border-radius:999px;
-background:radial-gradient(circle at top left,#0ea5e9,#0369a1);
+background:radial-gradient(circle,#0ea5e9,#0369a1);
 color:#020617;
 font-weight:800;
-text-decoration:none;
+text-transform:uppercase;
+font-size:.82rem;
 box-shadow:
 0 0 6px rgba(56,189,248,.9),
 0 0 18px rgba(56,189,248,.7),
@@ -131,87 +156,155 @@ box-shadow:
 
 .btn-led:hover{
 box-shadow:
-0 0 10px rgba(56,189,248,1),
-0 0 26px rgba(56,189,248,.9),
-0 0 40px rgba(56,189,248,.8);
+0 0 12px rgba(56,189,248,1),
+0 0 28px rgba(56,189,248,.9),
+0 0 45px rgba(56,189,248,.8);
+}
+
+.btn-ghost{
+padding:9px 16px;
+border-radius:999px;
+border:1px solid var(--border);
+background:#020617;
+color:white;
+}
+
+/* SECTIONS */
+
+section{margin-top:40px}
+
+h2{
+border-left:4px solid var(--accent);
+padding-left:10px;
+}
+
+.card-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:16px;
+margin-top:16px;
+}
+
+.card{
+background:var(--card-bg);
+border:1px solid var(--border);
+border-radius:14px;
+padding:18px;
+transition:.25s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 24px 50px rgba(0,0,0,.6);
+border-color:var(--accent);
 }
 
 .pill{
-border:1px solid var(--border);
-border-radius:999px;
 padding:4px 8px;
+border-radius:20px;
+border:1px solid var(--border);
 font-size:.8rem;
+margin-right:6px;
 }
 
-.pill-row{
-display:flex;
-flex-wrap:wrap;
-gap:6px;
+.muted{color:var(--text-muted)}
+
+.mini-link{
+display:inline-block;
 margin-top:10px;
-}
-
-.muted{
-color:var(--muted);
+padding:6px 12px;
+border:1px solid var(--border);
+border-radius:8px;
+font-size:.85rem;
 }
 
 footer{
-margin-top:40px;
+margin-top:50px;
 border-top:1px solid var(--border);
-padding-top:12px;
-color:var(--muted);
+padding-top:16px;
 text-align:center;
+color:var(--text-muted);
 }
 
 </style>
+
 </head>
 
 <body>
 
 <div class="nav">
 
+<div class="nav-inner">
+
+<div class="brand">
+<span class="brand-dot"></span>
+Feyza Nur
+</div>
+
+<div class="nav-links">
+
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
-<a href="#experience">Experience</a>
+<a href="#featured">Featured</a>
 <a href="#projects">Projects</a>
-<a href="#achievements">Achievements</a>
+<a href="#case">Case Studies</a>
+<a href="#leadership">Leadership</a>
 <a href="#contact">Contact</a>
 
 </div>
 
+</div>
+</div>
+
 <div class="wrapper">
 
-<header>
+<section class="hero">
 
 <div class="avatar">
-
 <img src="profile.jpg">
-
 </div>
 
-<div>
+<div class="hero-text">
 
-<h1>Feyza Nur Cesimkaya</h1>
+<h1>Building AI-Driven Systems</h1>
 
-<div class="role">
-Industrial Engineering Student · Product Thinking · AI & Digital Systems
-</div>
-
-<p>
-I build human-centered digital systems that connect behavior → insights → decisions.
-Interested in product development, AI-driven tools and digital transformation.
+<p class="hero-sub">
+Industrial Engineering student exploring AI, digital products and marketing systems.
 </p>
+
+<div class="hero-tags">
+
+<span>AI Systems</span>
+<span>Product Thinking</span>
+<span>Process Optimization</span>
+
+</div>
+
+<div class="actions">
 
 <a class="btn-led"
 href="cv-feyza-nur-cesimkaya.pdf"
 target="_blank">
-
 Download CV
+</a>
 
+<a class="btn-ghost"
+href="https://linkedin.com/in/feyzanurcesimkaya"
+target="_blank">
+LinkedIn
+</a>
+
+<a class="btn-ghost"
+href="https://github.com/feyzanurcesimkaya"
+target="_blank">
+GitHub
 </a>
 
 </div>
 
-</header>
+</div>
+
+</section>
 
 <section id="about">
 
@@ -220,11 +313,13 @@ Download CV
 <div class="card">
 
 <p>
-Industrial Engineering student at MEF University interested in the intersection of technology, data and business strategy.
+Industrial Engineering student interested in AI-driven marketing systems,
+digital products and operational platforms.
 </p>
 
 <p>
-I enjoy building systems and digital tools that turn complex problems into scalable solutions.
+My work focuses on building systems connecting technology,
+data and human behavior.
 </p>
 
 </div>
@@ -242,9 +337,10 @@ I enjoy building systems and digital tools that turn complex problems into scala
 <h3>Business</h3>
 
 <ul>
-<li>Product Thinking</li>
+
+<li>Marketing Strategy</li>
+<li>Corporate Relations</li>
 <li>Stakeholder Management</li>
-<li>Business Analysis</li>
 
 </ul>
 
@@ -255,9 +351,10 @@ I enjoy building systems and digital tools that turn complex problems into scala
 <h3>Operations</h3>
 
 <ul>
+
+<li>Project Management</li>
 <li>Process Optimization</li>
-<li>KPI Tracking</li>
-<li>Root Cause Analysis</li>
+<li>KPI Reporting</li>
 
 </ul>
 
@@ -268,10 +365,10 @@ I enjoy building systems and digital tools that turn complex problems into scala
 <h3>Technical</h3>
 
 <ul>
+
 <li>Python</li>
-<li>API Integration</li>
-<li>SQL</li>
-<li>Data Analysis</li>
+<li>Streamlit</li>
+<li>Git & GitHub</li>
 
 </ul>
 
@@ -281,39 +378,31 @@ I enjoy building systems and digital tools that turn complex problems into scala
 
 </section>
 
-<section id="experience">
+<section id="featured">
 
-<h2>Experience</h2>
+<h2>Featured Work</h2>
+
+<div class="card-grid">
 
 <div class="card">
 
-<strong>TurkishWIN — Story Harvesting Intern</strong>
+<h3>Spotify LifeMode AI</h3>
 
-<p class="muted">2026 – Present</p>
-
-<ul>
-
-<li>Transform community experiences into digital storytelling outputs</li>
-
-<li>Analyze engagement metrics to optimize communication</li>
-
-</ul>
+<p>
+Behavior-driven marketing engine generating adaptive communication.
+</p>
 
 </div>
 
 <div class="card">
 
-<strong>ENKA Construction — Quality Intern</strong>
+<h3>Event Management Platform</h3>
 
-<p class="muted">2025</p>
+<p>
+Operational system improving university event planning workflows.
+</p>
 
-<ul>
-
-<li>Root cause analysis of operational issues</li>
-
-<li>Developed KPI monitoring dashboards</li>
-
-</ul>
+</div>
 
 </div>
 
@@ -329,39 +418,33 @@ I enjoy building systems and digital tools that turn complex problems into scala
 
 <h3>Spotify LifeMode AI</h3>
 
-<p>
-AI marketing system interpreting user behavior to generate personalized messaging.
-</p>
+<p class="muted">AI Marketing Prototype</p>
 
-<div class="pill-row">
-
-<span class="pill">AI</span>
-
+<span class="pill">Python</span>
+<span class="pill">AI Logic</span>
 <span class="pill">Marketing</span>
-
-<span class="pill">Streamlit</span>
-
-</div>
 
 </div>
 
 <div class="card">
 
-<h3>Event Management Platform</h3>
+<h3>Event Platform</h3>
 
-<p>
-Full-stack platform automating university event operations.
-</p>
+<p class="muted">Operational System</p>
 
-<div class="pill-row">
-
-<span class="pill">React</span>
-
-<span class="pill">Node</span>
-
+<span class="pill">Automation</span>
 <span class="pill">Operations</span>
 
 </div>
+
+<div class="card">
+
+<h3>AI NCR Root Cause Analysis</h3>
+
+<p class="muted">Quality AI Concept</p>
+
+<span class="pill">Quality</span>
+<span class="pill">AI</span>
 
 </div>
 
@@ -369,31 +452,52 @@ Full-stack platform automating university event operations.
 
 </section>
 
-<section id="achievements">
+<section id="case">
 
-<h2>Selected Achievements</h2>
+<h2>Case Studies</h2>
 
 <div class="card-grid">
 
 <div class="card">
 
-<h3>Slush Türkiye × Midas Case Winner</h3>
+<h3>Spotify LifeMode AI</h3>
 
-<p>
-Developed a fintech product growth concept ranked 1st among teams.
-</p>
+<ul>
+
+<li><strong>Problem:</strong> Marketing lacks behavioral understanding.</li>
+
+<li><strong>Approach:</strong> AI infers LifeModes from user signals.</li>
+
+<li><strong>Outcome:</strong> Generates multilingual marketing outputs.</li>
+
+</ul>
+
+<a class="mini-link"
+href="https://github.com/feyzanurcesimkaya/spotify-lifemode-ai"
+target="_blank">
+View Project →
+</a>
 
 </div>
+
+</div>
+
+</section>
+
+<section id="leadership">
+
+<h2>Leadership</h2>
 
 <div class="card">
 
-<h3>TurkishWIN Internship</h3>
+<ul>
 
-<p>
-Worked on digital storytelling and event experience strategy.
-</p>
+<li>100sClub — Senior Area Leader</li>
+<li>MEF University — Student Affairs Assistant</li>
+<li>IVY in MEF — Board Member</li>
+<li>SLUSH Türkiye — Volunteer</li>
 
-</div>
+</ul>
 
 </div>
 
@@ -405,14 +509,18 @@ Worked on digital storytelling and event experience strategy.
 
 <div class="card">
 
+<p>📧 feyzanurcesimkaya@gmail.com</p>
+
 <p>
+💼 <a href="https://linkedin.com/in/feyzanurcesimkaya" target="_blank">
+LinkedIn
+</a>
+</p>
 
-📧 feyzanurcesimkaya@gmail.com<br>
-
-💼 <a href="https://linkedin.com/in/feyzanurcesimkaya" target="_blank">LinkedIn</a><br>
-
-🐙 <a href="https://github.com/feyzanurcesimkaya" target="_blank">GitHub</a>
-
+<p>
+🐙 <a href="https://github.com/feyzanurcesimkaya" target="_blank">
+GitHub
+</a>
 </p>
 
 </div>
@@ -421,12 +529,15 @@ Worked on digital storytelling and event experience strategy.
 
 <footer>
 
-© 2026 Feyza Nur Cesimkaya
+© <span id="year"></span> Feyza Nur Cesimkaya · Built with GitHub Pages
 
 </footer>
 
 </div>
 
-</body>
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
 
+</body>
 </html>
